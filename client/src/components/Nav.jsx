@@ -4,7 +4,7 @@ function Nav() {
   return (
     <div>
 
-<nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 mx-auto text-center bg-blue-300">
+<nav className=" border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-900 mx-auto text-center bg-blue-300">
  
    
     

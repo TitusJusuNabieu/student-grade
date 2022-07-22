@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import Nav from '../components/Nav'
 import Table from '../components/Table'
+const {REACT_APP_API_URL} = process.env
 
 function Home() {
 
@@ -11,7 +12,7 @@ function Home() {
   useEffect(() => {
     // declare the data fetching function
     const fetchData = async () => {
-      const res = await (await fetch('http://localhost:4000/api/v1/students')).json();
+      const res = await (await fetch(REACT_APP_API_URL)).json();
        setData(res.data)
     }
   
@@ -29,10 +30,12 @@ function Home() {
   return (
     <div className='w-screen h-screen dark:bg-slate-500'>
         <Nav/>
-        <div className='mt-16 mx-6'>
+        <div className='mt-16 mx-[10%]'>
           {console.log(data)}
 
-          {data?<Table data={data}/>:<div></div>}
+          {!data.length?<div className='mx-auto text-center flex item-center justify-center'>
+            <img className='w-[30%]' src="./spinner2.gif" alt="spinner" />
+            </div>:<Table data={data}/>}
         
         </div>
         
