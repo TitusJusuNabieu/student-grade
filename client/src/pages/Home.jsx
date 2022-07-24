@@ -6,7 +6,7 @@ const {REACT_APP_API_URL} = process.env
 function Home() {
 
   const [data, setData] = useState(null);
-  const [error,setError] = useState([false])
+
 
 
   useEffect(() => {
@@ -17,12 +17,9 @@ function Home() {
     }
   
     // call the function
-    try {
        fetchData()
       
-    } catch (error) {
-      setError(true)
-    }
+   
     
       
   }, [])
