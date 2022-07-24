@@ -5,7 +5,7 @@ const {REACT_APP_API_URL} = process.env
 
 function Home() {
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [error,setError] = useState([false])
 
 
@@ -31,9 +31,9 @@ function Home() {
     <div className='w-screen h-screen dark:bg-slate-500'>
         <Nav/>
         <div className='mt-16 mx-[10%]'>
-          {console.log(data)}
-
-          {!data.length?<div className='mx-auto text-center flex item-center justify-center'>
+        
+          
+          {data === null?<div className='mx-auto text-center flex item-center justify-center'>
             <img className='w-[30%]' src="./spinner2.gif" alt="spinner" />
             </div>:<Table data={data}/>}
         

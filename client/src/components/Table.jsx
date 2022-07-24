@@ -25,6 +25,8 @@ function Table({data}) {
         </thead>
         <tbody>
             {
+                data === null || data.length === 0 ?<tr><td className='text-5xl dark:text-white text-gray-900'>Please insert data to display</td></tr>:
+
                 data.map((student,index)=>{
 
                 return(
